@@ -1,0 +1,33 @@
+extends layout
+
+block head
+  title כנסת שקופה - פגישות מצולמות של ועדות ומליאת הכנסת
+  link(rel='stylesheet', href='/css/committee-tags.css')
+block variables
+  - 
+    let committeeAliases = { 
+      'ועדת הכספים': 'finance',
+      'ועדת החינוך, התרבות והספורט': 'education-culture-sport',
+      'מליאה': 'assembly',
+      'הוועדה המסדרת' : 'administrative',
+      'ועדת החוקה, חוק ומשפט': 'law',
+      'ועדת הכנסת': 'knesset',
+      'ועדת הכלכלה': 'economy',      
+      'ועדת הפנים והגנת הסביבה': 'internal-affairs-environment'
+    }
+block content
+  .layout-with-video
+    .main
+      each meeting in meetings
+        .meeting.meeting--link(data-youtube-url=meeting.youtubeUrl, data-committee-tag=committeeAliases[meeting.committee] || 'special', data-meeting-id=meeting.meetingId)
+          span.date= meeting.dateString
+          h2= meeting.title
+          span= meeting.committee
+    .video-container
+      .video
+        iframe(frameborder="0", allowfullscreen)
+      
+
+block scripts
+  script(src="/js/meetings.js")
+  

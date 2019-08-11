@@ -1,0 +1,38 @@
+.meeting[data-committee-tag]{
+  border-top: .5em solid #fff;
+  position: relative;
+}
+.meeting[data-committee-tag="special"]{ border: none;}
+.meeting[data-committee-tag="finance"]{ border-color: #40B3A2; }
+.meeting[data-committee-tag="finance"]::before{ background-color: #40B3A2; background-image: url('../icons/finance.png'); }
+
+.meeting[data-committee-tag="education-culture-sport"]{ border-color: #E8A87C; }
+.meeting[data-committee-tag="education-culture-sport"]::before{ background-color: #E8A87C; background-image: url('../icons/education.png'); }
+
+.meeting[data-committee-tag="assembly"]{ border-color: #A33327; }
+.meeting[data-committee-tag="assembly"]::before{ background-color: #A33327; background-image: url('../icons/assembly.png');}
+
+.meeting[data-committee-tag="administrative"]{ border-color: #C38D9D }
+.meeting[data-committee-tag="administrative"]::before{ background-color: #C38D9D; background-image: url('../icons/administrative.png'); }
+
+.meeting[data-committee-tag="law"]{ border-color:  #E27D5F; }
+.meeting[data-committee-tag="law"]::before{ background-color: #E27D5F; background-image: url('../icons/law.png'); }
+
+.meeting[data-committee-tag="knesset"]{ border-color: #ffb5b5; }
+.meeting[data-committee-tag="knesset"]::before{ background-color: #ffb5b5; background-image: url('../icons/knesset.png'); }
+
+.meeting[data-committee-tag="economy"]{ border-color: #389583; }
+.meeting[data-committee-tag="economy"]::before{ background-color: #389583; }
+
+.meeting[data-committee-tag]::before{
+  content: '';
+  position: absolute;
+  left:3em;
+  top:0;
+  height: 2em;
+  width: 2em;
+  border-radius: 0 0 .5em .5em;
+  background-position: center .2em;
+  background-size: 1.5em 1.5em;
+  background-repeat: no-repeat;
+}

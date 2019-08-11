@@ -1,0 +1,18 @@
+extends layout
+
+append block head
+
+block content
+  .layout-simple
+    each meeting in meetings
+      .meeting 
+        table
+          each key in ["meetingId", "committee", "videoUrl", "title", "date", "dateString", "youtubeUrl"]
+            tr
+              th= key
+              td
+                input(type="text", name=meeting.meetingId+'/'+key, value=(meeting[key] || '').toString())
+
+block scripts
+  script(src="/js/edit-meetings.js")
+  
